@@ -1,0 +1,260 @@
+/* styles.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.header-section {
+    background: url('your-background-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+}
+
+h1.name-header {
+    font-size: 4rem;
+    animation: fadeInDown 1s ease-out;
+    z-index: 1;
+}
+
+p.tagline {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+a.btn {
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+a.btn:hover {
+    background-color: #ff6347;
+    color: #fff;
+}
+
+.social-icons {
+    z-index: 1;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ff6347;
+}
+
+
+
+/* About Me Section Styling */
+.about-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.about-section .card {
+    border: none;
+    background-color: #fff;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .icon {
+    color: #ff6347;
+}
+
+/* Header Styling */
+.header-section {
+    background: url('your-background-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.name-header {
+    font-size: 4rem;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff6347;
+}
+
+.red-line {
+    width: 150px;
+    height: 2px;
+    background-color: #ff6347;
+    border: none;
+    margin: 20px auto;
+}
+
+/* My Work Section */
+.my-work-section {
+    background-color: #cccccc;
+    padding: 80px 0;
+}
+
+.progress-bar-container h5 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.progress {
+    height: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+/* Fade-in effect */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-300px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+@media (max-width: 768px) {
+    .fade-in-left {
+        transform: translateX(-50px);
+    }
+}
+
+.fade-in-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.imgFirda{
+    height: 50px;
+    width: 50px;
+}
+
+.card-img-top{
+    width: 200px;
+}
+
+.mpcard{
+    margin-bottom: 100px;
+}
+
+.modal {
+    z-index: 1051;
+}
+
+.modal-content {
+    background-color: white; /* Ensure the modal content has a clear background */
+    color: black; /* Set the text color to be visible */
+    z-index: 1055; /* Slightly higher than the default modal */
+}
+
+.modal-backdrop {
+    z-index: 1040; /* Ensure the backdrop stays behind the modal */
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+}
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.footer-logo {
+    max-width: 100px;
+}
+
+.footer h5 {
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer a:hover {
+    color: #e34c26; /* Accent color matching your theme */
+}
+
+.social-icons i {
+    transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+    color: #e34c26; /* Accent color */
+}
+
+.footer .list-unstyled {
+    padding-left: 0;
+}
+
+.imgj{
+    height: 800px;
+}
