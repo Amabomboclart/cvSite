@@ -258,3 +258,16 @@ a.btn:hover {
 .imgj{
     height: 800px;
 }
+
+.carousel-control-prev-icon {
+    filter: invert(47%) sepia(96%) saturate(3907%) hue-rotate(349deg) brightness(93%) contrast(98%);
+}
+
+.carousel-control-next-icon {
+    filter: invert(47%) sepia(96%) saturate(3907%) hue-rotate(349deg) brightness(93%) contrast(98%);
+}
+
+.modal-body {
+    max-height: 75vh;
+    overflow-y: auto;
+}
