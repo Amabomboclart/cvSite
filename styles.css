@@ -5,6 +5,36 @@ body, html {
     scroll-behavior: smooth;
 }
 
+/* Header Styling */
+
+.name-header {
+    font-size: 4rem;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff6347;
+}
+
+.red-line {
+    width: 150px;
+    height: 2px;
+    background-color: #ff6347;
+    border: none;
+    margin: 20px auto;
+}
+
 .header-section {
     background: url('your-background-image.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -37,19 +67,6 @@ p.tagline {
     z-index: 1;
 }
 
-a.btn {
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-    z-index: 1;
-}
-
-a.btn:hover {
-    background-color: #ff6347;
-    color: #fff;
-}
-
 .social-icons {
     z-index: 1;
 }
@@ -66,7 +83,19 @@ a.btn:hover {
     color: #ff6347;
 }
 
-
+@media (min-width: 768px) {
+    .about-section .card:hover {
+        transform: translateZ(70px) scale(1.1) rotateX(5deg) rotateY(5deg) !important;
+        z-index: 10 !important;
+        box-shadow: 0 24px 40px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .about-section .card:hover ~ .card {
+        transform: translateZ(-30px) !important; 
+        transition: transform 0.5s ease, filter 0.5s ease !important;
+        filter: blur(2px) brightness(0.9) !important; 
+    }
+}
 
 /* About Me Section Styling */
 .about-section {
@@ -81,59 +110,27 @@ a.btn:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-section .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.about-section .container {
+    perspective: 1200px !important;
+}
+
+.about-section .card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease !important;
+    transform-style: preserve-3d !important;
+    will-change: transform, filter !important;
+    z-index: 1;
+}
+
+.about-section .card .icon i {
+    font-size: 50px !important;
+}
+
+.about-section .card {
+    filter: none;
 }
 
 .about-section .icon {
     color: #ff6347;
-}
-
-/* Header Styling */
-.header-section {
-    background: url('your-background-image.jpg') no-repeat center center/cover;
-    height: 100vh;
-    position: relative;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.name-header {
-    font-size: 4rem;
-}
-
-.tagline {
-    font-size: 1.5rem;
-    margin-top: 20px;
-}
-
-.social-icons a {
-    font-size: 1.8rem;
-    color: white;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #ff6347;
-}
-
-.red-line {
-    width: 150px;
-    height: 2px;
-    background-color: #ff6347;
-    border: none;
-    margin: 20px auto;
 }
 
 /* My Work Section */
@@ -253,10 +250,6 @@ a.btn:hover {
 
 .footer .list-unstyled {
     padding-left: 0;
-}
-
-.imgj{
-    height: 800px;
 }
 
 .carousel-control-prev-icon {
