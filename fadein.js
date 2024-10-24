@@ -6,6 +6,11 @@ const observerOptions = {
     threshold: 0.2 
 };
 
+window.addEventListener('load', function() {
+    document.getElementById('headT').style.opacity = 1;
+});
+
+
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {

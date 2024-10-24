@@ -6,6 +6,21 @@ body, html {
 }
 
 /* Header Styling */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Optional: slight movement */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#headT {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
 
 .name-header {
     font-size: 4rem;
@@ -36,7 +51,6 @@ body, html {
 }
 
 .header-section {
-    background: url('your-background-image.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -46,13 +60,18 @@ body, html {
     overflow: hidden;
 }
 
+.header-section a {
+    color: #e34c26; /* Accent color matching your theme */
+}
+
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgb(122, 2, 2));
+    z-index: -1; 
 }
 
 h1.name-header {
@@ -79,8 +98,14 @@ p.tagline {
     text-decoration: none;
 }
 
-.social-icons a:hover {
-    color: #ff6347;
+.btn{
+    background-color: #e34c26 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.social-icons a {
+    color: #e34c26;
 }
 
 @media (min-width: 768px) {
@@ -217,6 +242,7 @@ p.tagline {
     background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
 }
 
+
 .footer {
     background-color: #222;
     color: #fff;
@@ -264,3 +290,145 @@ p.tagline {
     max-height: 75vh;
     overflow-y: auto;
 }
+
+.imgk{
+    height: 327px;
+}
+
+.gameC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 50px auto;
+}
+
+h4, h5 {
+    margin-bottom: 20px;
+}
+
+#game-section {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    border: 2px solid #333; 
+    border-radius: 10px; 
+    background-color: #fff; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    border: 2px solid #000;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+
+.player {
+    position: absolute;
+    bottom: 20px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff; 
+    border-radius: 50%; 
+    transition: left 0.1s; 
+}
+
+.falling-object {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #dc3545; 
+    border-radius: 5px; 
+    transition: top 0.1s; 
+}
+
+#scoreboard, #highscoreboard {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+#highscoreboard {
+    left: 10px;
+}
+
+#scoreboard {
+    right: 10px;
+}
+
+#start-btn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#start-btn:hover {
+    background-color: #218838;
+}
+
+#gameOverMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 960px) {
+    #game-section, #start-btn {
+        display: none;
+    }
+
+    #desktop-only-message {
+        display: block;
+        text-align: center;
+        padding: 20px;
+        font-size: 20px;
+        color: #333;
+    }
+
+    .t1{
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    #desktop-only-message {
+        display: none;
+    }
+}
+
+

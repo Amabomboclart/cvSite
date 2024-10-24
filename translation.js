@@ -28,7 +28,9 @@ const translations = {
         footerName: "Ali Al Houmadi",
         footerRole: "Student Software Developer",
         footerCopyright: "© 2024 Ali Al Houmadi. All rights reserved.",
-        footerConnectTitle: "Connect with Me"
+        footerConnectTitle: "Connect with Me",
+        gameHeader: "This is a game I made to stimulate you, the user, that way you pick me for your company... please?",
+        gameDescription: "Dodge the falling objects! Use the left and right arrow keys to move the ball and avoid the red blocks. How high can you score?"
     },
     nl: {
         headerText: "Ali Al Houmadi",
@@ -59,7 +61,9 @@ const translations = {
         footerName: "Ali Al Houmadi",
         footerRole: "Student Software Developer",
         footerCopyright: "© 2024 Ali Al Houmadi. Alle rechten voorbehouden.",
-        footerConnectTitle: "connect met mij"
+        footerConnectTitle: "connect met mij",
+        gameHeader: "Dit is een spel dat ik heb gemaakt om jou, de gebruiker, te stimuleren, zodat je mij kiest voor je bedrijf... alsjeblieft?",
+        gameDescription: "Ontwijk de vallende objecten! Gebruik de linker- en rechterpijltjestoetsen om de bal te bewegen en de rode blokken te ontwijken. Hoe hoog kun je scoren?"
     }
 };
 
@@ -91,6 +95,8 @@ function setLanguage(language) {
     document.getElementById("footer-role").innerText = translations[language].footerRole;
     document.getElementById("footer-copyright").innerText = translations[language].footerCopyright;
     document.getElementById("footer-connect-title").innerText = translations[language].footerConnectTitle;
+    document.getElementById("game-header").innerText = translations[language].gameHeader;
+    document.getElementById("game-description").innerText = translations[language].gameDescription;
 }
 
 // Event listeners for the translation buttons
