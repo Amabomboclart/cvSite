@@ -368,16 +368,12 @@ h4, h5 {
     display: inline-block;
     margin: 20px auto;
     padding: 15px 30px;
-    background-color: #28a745;
+    background-color: #e34c26;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-}
-
-#start-btn:hover {
-    background-color: #218838;
 }
 
 #gameOverMessage {
