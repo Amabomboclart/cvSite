@@ -86,12 +86,26 @@ function createFallingObject() {
     game.appendChild(fallingObject);
 
     let fallingObjectY = 0;
-    const objectSpeed = Math.random() * 2 + 2;
+    
+    let baseSpeed = 2;
+    let additionalSpeed = Math.min(5, score / 20); 
+    const objectSpeed = baseSpeed + additionalSpeed;
 
-    const fallInterval = setInterval(() => {
+    if (score === 100) {
+        game.style.backgroundColor = '#fccccc'; 
+        game.style.transition = 'background-color 1s ease';
+
+        game.style.boxShadow = '0 0 20px 10px rgba(255, 0, 0, 0.5)';
+
+        setTimeout(() => {
+            game.style.backgroundColor = '';
+            game.style.boxShadow = ''; 
+        }, 3000);
+    }
+
+    function updateObjectPosition() {
         if (!isGameActive) {
-            clearInterval(fallInterval);
-            fallingObject.remove();  
+            fallingObject.remove();
             return;
         }
 
@@ -108,25 +122,36 @@ function createFallingObject() {
             objectRect.right > playerRect.left
         ) {
             gameOver();
-            clearInterval(fallInterval);
+            return;
         }
 
         if (fallingObjectY > 620) {
             fallingObject.remove();
-            clearInterval(fallInterval);
             score++;
             scoreDisplay.textContent = score;
+            return;
         }
-    }, 20);
+
+        requestAnimationFrame(updateObjectPosition);
+    }
+
+    requestAnimationFrame(updateObjectPosition);
 }
 
 function startGame() {
+    if (isGameActive) return;
+
     score = 0;
     scoreDisplay.textContent = score;
-    startButton.style.display = 'none';
     game.style.display = 'block';
 
-    isGameActive = true;  
+    leftKeyPressed = false;
+    rightKeyPressed = false;
+
+    playerX = 180;
+    velocity = 0;
+    player.style.left = playerX + 'px';
+    isGameActive = true;
 
     gameInterval = setInterval(createFallingObject, 1000);
 
@@ -175,4 +200,21 @@ function restartGame() {
     startGame();
 }
 
-startButton.addEventListener('click', startGame);
+function detectDevToolsOpen() {
+    const threshold = 100;
+
+    setInterval(() => {
+        const start = performance.now();
+        debugger; 
+        const duration = performance.now() - start;
+        if (duration > threshold) {
+            alert("Using DevTools to cheat is not allowed.");
+            location.reload();
+        }
+    }, 1000);
+}
+
+startButton.addEventListener('click', () => {
+    detectDevToolsOpen();
+    startGame();
+});

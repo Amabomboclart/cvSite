@@ -63,9 +63,13 @@ const translations = {
         footerCopyright: "© 2024 Ali Al Houmadi. Alle rechten voorbehouden.",
         footerConnectTitle: "connect met mij",
         gameHeader: "Dit is een spel dat ik heb gemaakt om jou, de gebruiker, te stimuleren, zodat je mij kiest voor je bedrijf... alsjeblieft?",
-        gameDescription: "Ontwijk de vallende objecten! Gebruik de linker- en rechterpijltjestoetsen om de bal te bewegen en de rode blokken te ontwijken. Hoe hoog kun je scoren?"
+        gameDescription: "Ontwijk de vallende blokken! Gebruik de linker- en rechterpijltjes om de bal te bewegen en de rode blokken te ontwijken. Hoe hoog kun je scoren?"
     }
 };
+
+console.log(document.getElementById("game-header")); // Check if this logs null
+console.log(document.getElementById("game-description"));
+
 
 // Function to set the text based on the selected language
 function setLanguage(language) {
@@ -93,7 +97,6 @@ function setLanguage(language) {
     document.getElementById("project2-modal-description").innerHTML = translations[language].project2ModalDescription;
     document.getElementById("footer-name").innerText = translations[language].footerName;
     document.getElementById("footer-role").innerText = translations[language].footerRole;
-    document.getElementById("footer-copyright").innerText = translations[language].footerCopyright;
     document.getElementById("footer-connect-title").innerText = translations[language].footerConnectTitle;
     document.getElementById("game-header").innerText = translations[language].gameHeader;
     document.getElementById("game-description").innerText = translations[language].gameDescription;
